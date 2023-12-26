@@ -1,0 +1,28 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner input=new Scanner(System.in);
+        System.out.println("enter number of subjects");
+        int x=input.nextInt();
+        int sum=0;
+        for(int i=1;i<=x;i++) {
+            System.out.printf("%d: enter marks obtained out of 100", i);
+            int marks = input.nextInt();
+            sum += marks;
+        }
+        double per=sum;
+        per/=x;
+        char grade;
+        if(per>=80)
+            grade='A';
+        else if(per>60)
+            grade='B';
+        else if(per>40)
+            grade='C';
+        else
+            grade='F';
+
+        System.out.printf("RESULT:\nTOTAL MARKS:%d\nAVERAGE PERCENTAGE:%.2f\nGRADE:%c",sum,per,grade);
+
+    }
+}
